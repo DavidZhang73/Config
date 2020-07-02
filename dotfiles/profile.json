@@ -7,29 +7,50 @@
     "launchMode": "maximized",
     "profiles": {
         "defaults": {
-            "acrylicOpacity": 0.6,
             "useAcrylic": true,
+            "acrylicOpacity": 0.6,
             "colorScheme": "One Half Dark",
             "fontFace": "JetBrains Mono",
-            "fontSize": 12,
+            "fontSize": 13,
             "startingDirectory": ".",
-            "closeOnExit": "always",
-            "backgroundImage": "D:\\Temp\\Windows Terminal\\Totoro.jpeg",
-            "backgroundImageStretchMode": "uniformToFill",
-            "backgroundImageOpacity": 0.4
+            "closeOnExit": "always"
         },
         "list": [
             {
                 "guid": "{807502AB-0C92-4DF7-9C7C-1E9F7A2A47DE}",
                 "name": "powershell core",
-                "commandline": "pwsh.exe -nol",
+                "commandline": "E:\\Scoop\\apps\\pwsh\\current\\pwsh.exe -nol",
                 "icon": "D://Temp/Windows Terminal/icons/powershell 6.png"
+            },
+            {
+                "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
+                "hidden": false,
+                "name": "wsl",
+                "source": "Windows.Terminal.Wsl"
             },
             {
                 "guid": "{85933BC0-E5D2-4299-9FBC-AC6C9F6DFD46}",
                 "name": "davidz.cn",
                 "commandline": "ssh.exe root@davidz.cn",
-                "icon": "D://Temp/Windows Terminal/icons/davdz.cn.png"
+                "icon": "D://Temp/Windows Terminal/icons/davidz.png"
+            },
+            {
+                "guid": "{FA3F2919-C137-40B7-AAF5-304F7495F6C5}",
+                "name": "pve",
+                "commandline": "ssh.exe root@192.168.2.10",
+                "icon": "D://Temp/Windows Terminal/icons/pve.ico"
+            },
+            {
+                "guid": "{0EA36963-2895-4612-9ECB-38096E781D63}",
+                "name": "lede",
+                "commandline": "ssh.exe root@192.168.2.2",
+                "icon": "D://Temp/Windows Terminal/icons/lede.png"
+            },
+            {
+                "guid": "{7AFCDAF7-AE07-479C-9FD7-C7C8FA0F7725}",
+                "name": "dsm",
+                "commandline": "ssh.exe david@192.168.2.20",
+                "icon": "D://Temp/Windows Terminal/icons/dsm.png"
             },
             {
                 "guid": "{EE602728-771C-4EC1-921D-2F44907520B2}",
@@ -48,12 +69,6 @@
                 "name": "cmd",
                 "commandline": "cmd.exe",
                 "hidden": true
-            },
-            {
-                "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
-                "hidden": false,
-                "name": "wsl",
-                "source": "Windows.Terminal.Wsl"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
