@@ -73,6 +73,7 @@ plugins=(
     git
     sudo
     extract
+    zsh-autocomplete
     zsh-autosuggestions
     zsh-syntax-highlighting
     )
