@@ -1,4 +1,5 @@
 Import-Module z
+Import-Module Terminal-Icons
 oh-my-posh init pwsh --config "https://raw.githubusercontent.com/DavidZhang73/Config/master/themes/mytheme.omp.json" | Invoke-Expression
 try { $null = Get-Command concfg -ea stop; concfg tokencolor -n enable } catch { }  # concfg
 
@@ -16,6 +17,28 @@ function update {
     Write-Host "Finished"
 }
 function mkdir { New-Item "$args" -ItemType Directory }
+function proxy_on {
+    $Env:http_proxy = "http://127.0.0.1:7890"
+    $Env:HTTP_PORXY = "http://127.0.0.1:7890"
+    $Env:https_proxy = "http://127.0.0.1:7890"
+    $Env:HTTPS_PROXY = "http://127.0.0.1:7890"
+    $Env:all_proxy = "http://127.0.0.1:7890"
+    $Env:ALL_PROXY = "http://127.0.0.1:7890"
+    git config --global http.proxy 'http://127.0.0.1:7890'
+    git config --global https.proxy 'https://127.0.0.1:7890'
+    scoop config aria2-enabled false
+}
+function proxy_off {
+    $Env:http_proxy = ""
+    $Env:HTTP_PORXY = ""
+    $Env:https_proxy = ""
+    $Env:HTTPS_PROXY = ""
+    $Env:all_proxy = ""
+    $Env:ALL_PROXY = ""
+    git config --global --unset http.proxy
+    git config --global --unset https.proxy
+    scoop config aria2-enabled true
+}
 
 # Alias
 Set-Alias -Name upd -Value update

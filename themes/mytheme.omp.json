@@ -85,20 +85,20 @@
           "type": "python"
         },
         {
-          "type": "node",
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#ffffff",
           "background": "#6CA35E",
-          "template": "  {{ .Full }} "
+          "template": "  {{ .Full }} ",
+          "type": "node"
         },
         {
-          "type": "project",
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#193549",
           "background": "#ffeb3b",
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} "
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }} {{.Version}}{{ end }} {{ if .Name }}{{ .Name }}{{ end }}{{ end }} ",
+          "type": "project"
         },
         {
           "foreground": "#FFD54F",
