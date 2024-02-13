@@ -54,7 +54,7 @@
             "style": "letter"
           },
           "style": "powerline",
-          "template": " \ue5fe {{ .Path }} ",
+          "template": " \ue5fe {{ url .Path .Location }} ",
           "type": "path"
         },
         {
