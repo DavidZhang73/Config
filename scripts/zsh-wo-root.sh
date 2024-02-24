@@ -1,3 +1,6 @@
+#!/bin/sh
+set -e
+
 cd $HOME
 PREFIX=$HOME/.local
 NCURSES_VERSION=6.3
@@ -39,10 +42,6 @@ echo '[ -f $HOME/.local/bin/zsh ] && exec $HOME/.local/bin/zsh -l' >> ~/.profile
 echo "******************** Install oh-my-zsh *************************"
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
 
-echo "******************** Config oh-my-zsh *************************"
-wget https://raw.githubusercontent.com/DavidZhang73/Config/master/dotfiles/.dircolors -O ~/.dircolors
-wget https://raw.githubusercontent.com/DavidZhang73/Config/master/dotfiles/.zshrc -O ~/.zshrc
-
 echo "******************** Install zsh-autosuggestions *************************"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -51,6 +50,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 
 echo "******************** Install zsh-completions *************************"
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+
+echo "******************** Config oh-my-zsh *************************"
+wget https://raw.githubusercontent.com/DavidZhang73/Config/master/dotfiles/.dircolors -O ~/.dircolors
+wget https://raw.githubusercontent.com/DavidZhang73/Config/master/dotfiles/.zshrc -O ~/.zshrc
 
 echo "******************** Finish *************************"
 zsh
