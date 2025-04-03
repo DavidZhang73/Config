@@ -1,6 +1,6 @@
-Import-Module z
 Import-Module Terminal-Icons
 oh-my-posh init pwsh --config "https://raw.githubusercontent.com/DavidZhang73/Config/master/themes/mytheme.omp.json" | Invoke-Expression
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
 try { $null = Get-Command concfg -ea stop; concfg tokencolor -n enable } catch { }  # concfg
 
 # Custom config
@@ -19,7 +19,7 @@ function update {
 function mkdir { New-Item "$args" -ItemType Directory }
 function proxy_on {
     $Env:http_proxy = "http://127.0.0.1:7890"
-    $Env:HTTP_PORXY = "http://127.0.0.1:7890"
+    $Env:HTTP_PROXY = "http://127.0.0.1:7890"
     $Env:https_proxy = "http://127.0.0.1:7890"
     $Env:HTTPS_PROXY = "http://127.0.0.1:7890"
     $Env:all_proxy = "http://127.0.0.1:7890"
@@ -30,7 +30,7 @@ function proxy_on {
 }
 function proxy_off {
     $Env:http_proxy = ""
-    $Env:HTTP_PORXY = ""
+    $Env:HTTP_PROXY = ""
     $Env:https_proxy = ""
     $Env:HTTPS_PROXY = ""
     $Env:all_proxy = ""
